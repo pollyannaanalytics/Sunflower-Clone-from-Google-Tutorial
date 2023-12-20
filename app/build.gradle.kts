@@ -75,6 +75,12 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.7.2")
     implementation ("com.squareup.okhttp3:okhttp:3.6.0")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+
+    // paging
+    val paging_version = "3.1.1"
+    implementation ("androidx.paging:paging-runtime:$paging_version")
+    testImplementation ("androidx.paging:paging-common:$paging_version")
 }
 
 fun getAccessKey(): String? {
