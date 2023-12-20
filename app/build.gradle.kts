@@ -5,13 +5,13 @@ plugins {
 
 android {
     namespace = "com.pollyannawu.sunflower"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         buildConfigField("String", "UNSPLASH_ACCESS_KEY", "\"" + getAccessKey() + "\"")
         applicationId = "com.pollyannawu.sunflower"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -39,6 +39,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
