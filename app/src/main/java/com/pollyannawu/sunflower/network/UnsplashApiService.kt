@@ -1,6 +1,7 @@
 package com.pollyannawu.sunflower.network
 
 import com.pollyannawu.sunflower.BuildConfig
+import com.pollyannawu.sunflower.data.UnsplashSearchResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -16,7 +17,7 @@ interface UnsplashApiService {
         @Query("page") page: Int,
         @Query("per_page") perPage: Int,
         @Query("client_id") clientId: String = BuildConfig.UNSPLASH_ACCESS_KEY
-    )
+    ): UnsplashSearchResponse
 
 
     companion object {
