@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
+    id ("com.google.dagger.hilt.android")
 }
 
 android {
@@ -81,7 +83,13 @@ dependencies {
     val paging_version = "3.1.1"
     implementation ("androidx.paging:paging-runtime:$paging_version")
     testImplementation ("androidx.paging:paging-common:$paging_version")
+
+    // hilt for di
+    implementation ("com.google.dagger:hilt-android:2.44")
+    kapt ("com.google.dagger:hilt-compiler:2.44")
 }
+
+
 
 fun getAccessKey(): String? {
     return project.findProperty("ACCESS_KEY") as String?
