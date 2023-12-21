@@ -1,9 +1,9 @@
-package com.pollyannawu.sunflower.data
+package com.pollyannawu.sunflower.data.network
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.pollyannawu.sunflower.data.dataclass.UnsplashPhoto
 import com.pollyannawu.sunflower.network.UnsplashApiService
-import retrofit2.http.Query
 
 class UnsplashPagingSource(private val service: UnsplashApiService, private val query: String):
     PagingSource<Int, UnsplashPhoto>() {

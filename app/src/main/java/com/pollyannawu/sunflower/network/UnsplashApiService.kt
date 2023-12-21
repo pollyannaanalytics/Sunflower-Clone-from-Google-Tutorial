@@ -1,7 +1,7 @@
 package com.pollyannawu.sunflower.network
 
 import com.pollyannawu.sunflower.BuildConfig
-import com.pollyannawu.sunflower.data.UnsplashSearchResponse
+import com.pollyannawu.sunflower.data.dataclass.UnsplashSearchResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

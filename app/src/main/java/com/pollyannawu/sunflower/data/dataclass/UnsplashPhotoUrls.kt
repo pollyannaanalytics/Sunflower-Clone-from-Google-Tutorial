@@ -1,4 +1,4 @@
-package com.pollyannawu.sunflower.data
+package com.pollyannawu.sunflower.data.dataclass
 
 import com.google.gson.annotations.SerializedName
 
