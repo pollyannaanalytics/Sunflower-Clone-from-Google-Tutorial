@@ -24,7 +24,11 @@ class UnsplashPagingSource(private val service: UnsplashApiService, private val 
         }
     }
 
-
+    override fun getRefreshKey(state: PagingState<Int, UnsplashPhoto>): Int? {
+       return state.anchorPosition?.let { anchorPosition ->
+           state.closestPageToPosition(anchorPosition)?.prevKey
+       }
+    }
 
     companion object{
         private const val UNSPLASH_STARTING_PAGE_INDEX = 1
