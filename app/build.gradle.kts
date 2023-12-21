@@ -87,6 +87,11 @@ dependencies {
     // hilt for di
     implementation ("com.google.dagger:hilt-android:2.44")
     kapt ("com.google.dagger:hilt-compiler:2.44")
+
+    // room
+    val room_version = "2.5.0"
+    implementation ("androidx.room:room-runtime:$room_version")
+    annotationProcessor ("androidx.room:room-compiler:$room_version")
 }
 
 
