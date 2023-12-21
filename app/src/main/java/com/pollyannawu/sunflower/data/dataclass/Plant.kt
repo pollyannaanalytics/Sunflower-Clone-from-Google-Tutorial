@@ -1,9 +1,10 @@
 package com.pollyannawu.sunflower.data.dataclass
 
 import androidx.room.ColumnInfo
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.Calendar
-
+@Entity(tableName = "plants")
 data class Plant(
     @PrimaryKey @ColumnInfo(name = "id") val plantId: String,
     val name: String,
