@@ -16,7 +16,7 @@ import com.pollyannawu.sunflower.data.dataclass.Plant
 abstract class AppDatabase : RoomDatabase(){
 
     abstract fun gardenPlantingDao(): GardenPlantingDao
-    abstract fun plantDao(): GardenPlantingDao
+    abstract fun plantDao(): PlantDao
 
     companion object{
         private const val DATABASE_NAME = "sunflower-db"

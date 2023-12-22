@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
+import androidx.room.Upsert
 import com.pollyannawu.sunflower.data.dataclass.GardenPlanting
 import com.pollyannawu.sunflower.data.dataclass.PlantAndGardenPlantings
 import kotlinx.coroutines.flow.Flow
