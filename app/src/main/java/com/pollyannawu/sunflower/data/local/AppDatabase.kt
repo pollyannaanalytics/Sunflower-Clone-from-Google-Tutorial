@@ -8,8 +8,12 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import androidx.work.workDataOf
 import com.pollyannawu.sunflower.data.dataclass.GardenPlanting
 import com.pollyannawu.sunflower.data.dataclass.Plant
+import com.pollyannawu.sunflower.worker.SeedDatabaseWorker
+import com.pollyannawu.sunflower.worker.SeedDatabaseWorker.Companion.KEY_FILENAME
 
 @Database(entities = [GardenPlanting::class, Plant::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
@@ -39,10 +43,14 @@ abstract class AppDatabase : RoomDatabase(){
                     object : RoomDatabase.Callback(){
                         override fun onCreate(db: SupportSQLiteDatabase) {
                             super.onCreate(db)
-                        val request = OneTimeWorkRequestBuilder<>()
+                        val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>()
+                            .setInputData(workDataOf(KEY_FILENAME to PLANT_DATA_FILENAME))
+                            .build()
+
+                            WorkManager.getInstance(context).enqueue(request)
                         }
                     }
-                )
+                ).build()
         }
 
     }
